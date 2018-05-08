@@ -58,7 +58,35 @@ Obs    SAVFIRST    SAVLAST
  3       MOE         KOE
  4       TED         WON
 
+*                _               _       _
+ _ __ ___   __ _| | _____     __| | __ _| |_ __ _
+| '_ ` _ \ / _` | |/ / _ \   / _` |/ _` | __/ _` |
+| | | | | | (_| |   <  __/  | (_| | (_| | || (_| |
+|_| |_| |_|\__,_|_|\_\___|   \__,_|\__,_|\__\__,_|
 
+;
+
+data have;
+input (first last) ($);
+cards4;
+JOE DOE
+TED WON
+WON TED
+JOY JAN
+MOE KOE
+;;;;
+run;quit;
+*          _       _   _
+ ___  ___ | |_   _| |_(_) ___  _ __
+/ __|/ _ \| | | | | __| |/ _ \| '_ \
+\__ \ (_) | | |_| | |_| | (_) | | | |
+|___/\___/|_|\__,_|\__|_|\___/|_| |_|
+
+;
+
+for SAS see process
+
+* WPS solution
 %utl_submit_wps64('
 libname wrk sas7bdat "%sysfunc(pathname(work))";
 data havRev;
@@ -80,4 +108,6 @@ data wrk.want;
 run;quit;
 run;quit;
 ');
+
+
 
